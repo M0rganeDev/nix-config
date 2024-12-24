@@ -35,7 +35,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  networking.firewall.enable = false;
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -67,11 +67,16 @@
   users.users.linuxuser = {
     isNormalUser = true;
     description = "linuxuser";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "libvirtd"];
   };
   
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["linuxuser"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -104,14 +109,21 @@
      xorg.xkill
      slack
      rofi
+	 gnumake
+	 clang-tools
+	 glib
+	 glibc
+	 tmux
      # Themes
      kdePackages.breeze-gtk
      kdePackages.breeze-icons
      kdePackages.breeze.qt5
+	 dolphin
+	 libsForQt5.qt5.qtsvg
+	 libsForQt5.dolphin-plugins
      kdePackages.breeze
      kdePackages.qtsvg
      kdePackages.ark
-     nautilus
      aseprite
      catppuccin-cursors # Mouse cursor theme
      catppuccin-papirus-folders # Icon theme, e.g. for pcmanfm-qt

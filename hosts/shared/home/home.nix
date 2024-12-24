@@ -10,7 +10,12 @@
 
     style.name = "kvantum";
   };
-
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
   xdg.configFile = {
     "Kvantum/kvantum.kvconfig".text = ''
       [General]

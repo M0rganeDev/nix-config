@@ -12,7 +12,7 @@
 
       urgency_normal = {
         background = "#02173c";
-        foreground = "#510065";
+        foreground = "#FFFFFF";
       };
     };
   };
