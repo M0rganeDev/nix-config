@@ -56,12 +56,11 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "fr";
-    variant = "azerty";
+    layout = "us";
   };
 
   # Configure console keymap
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.linuxuser = {
@@ -71,10 +70,25 @@
   };
   
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  programs.fish.enable = true;
 
+  # https://nixos.wiki/wiki/Fish#Setting_fish_as_your_shell
+  programs.bash = {
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
+
+  users.defaultUserShell = pkgs.bash;
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "linuxuser" ];
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["linuxuser"];
+  users.groups.libvirtd.members = [ "linuxuser" ];
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
@@ -87,6 +101,7 @@
      vesktop
      nodejs_20
      jdk17
+	 jdk21_headless
      python3
      picom
      polybar

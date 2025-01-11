@@ -31,7 +31,8 @@
     ./kitty.nix
     ./i3.nix
     ./zsh.nix
-    ./picom.nix
+	./fish.nix
+	./picom.nix
     ./obs.nix
   ];
 }

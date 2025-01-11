@@ -9,7 +9,6 @@
 	# This command let's me execute arbitrary binaries downloaded through channels such as mason.
 	# https://www.reddit.com/r/NixOS/comments/13uc87h/comment/kgraua7/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
     initExtra = ''
-    export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
     nerdfetch
     echo ""
     nixcfg() {
