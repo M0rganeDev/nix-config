@@ -27,7 +27,14 @@
         /etc/nixos/hosts/laptop/host.nix
       ];
     };
-
+	nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        inputs.home-manager.nixosModules.default
+        /etc/nixos/hosts/shared/configuration.nix
+        /etc/nixos/hosts/vm/host.nix
+      ];
+    };
     nixosConfigurations.crappylaptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

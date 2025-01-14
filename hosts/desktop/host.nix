@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./steam.nix
+	./jellyfin.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -24,6 +25,9 @@
   users.users.linuxuser = {
     packages = with pkgs; [
       prismlauncher
+	  opencv
+	  slack
+	  aseprite
       libsForQt5.kdenlive
       jetbrains-toolbox
       mono

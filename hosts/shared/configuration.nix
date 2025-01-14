@@ -122,7 +122,6 @@
      obsidian
      pavucontrol
      xorg.xkill
-     slack
      rofi
 	 gnumake
 	 clang-tools
@@ -139,7 +138,6 @@
      kdePackages.breeze
      kdePackages.qtsvg
      kdePackages.ark
-     aseprite
      catppuccin-cursors # Mouse cursor theme
      catppuccin-papirus-folders # Icon theme, e.g. for pcmanfm-qt
      papirus-folders # For the catppucing stuff work
@@ -194,9 +192,9 @@
     pulse.enable = true;
   };
 
-  services.xserver.libinput = {
+  services.libinput = {
     enable = true;
-    middleEmulation = false;
+    touchpad.middleEmulation = false;
   };
 
 
