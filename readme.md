@@ -10,18 +10,17 @@ now, clone the repo in /etc/nixos :
 
 ```
 git clone git@github.com:M0rganeDev/nix-config.git /etc/nixos
-sudo nixos-rebuild switch
 ```
 
 note: this config is very personal to me and likely wont work on your machine without editing hardware-configuration.nix.
 
 # Features 
 
->I3 installed with polybar (todo : move my polybar config to home-manager)
+>I3 installed with polybar
 
 >vim ready to be used for Java, C and C++
 
->zsh ready to be used
+>zsh and fish ready to be used
 
 >kitty set up
 
@@ -49,4 +48,4 @@ note: this config is very personal to me and likely wont work on your machine wi
 
 >here you go, you just need to set wallpapers with nitrogen
 
->after that, you can run `switch [host name]` to update your config
+>after that, you can run `nswitch [host name]` to update your config

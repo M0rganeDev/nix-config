@@ -11,7 +11,7 @@
 
 		function nixcfg
 			cd /etc/nixos
-			vim
+			vi
 			cd $OLDPWD
 		end
 

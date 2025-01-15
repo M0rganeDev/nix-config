@@ -128,6 +128,7 @@
 	 glib
 	 glibc
 	 tmux
+	 unzip
      # Themes
      kdePackages.breeze-gtk
      kdePackages.breeze-icons

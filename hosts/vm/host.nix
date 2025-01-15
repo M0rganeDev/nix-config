@@ -10,4 +10,11 @@
   home-manager.users.linuxuser = import ./home/home.nix;
 
   boot.loader.grub.device = "/dev/sda";
+
+  users.users.linuxuser = {
+    packages = with pkgs; [
+	  slack
+    ];
+  };
+
 }
