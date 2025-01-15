@@ -36,6 +36,7 @@
 		'';
 		shellAliases = {
 			"clear" = "clear && nerdfetch";
+			"vim"	= "steam-run vim";
 		};
 	};
 }

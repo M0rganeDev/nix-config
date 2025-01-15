@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+	../desktop/steam.nix
     inputs.home-manager.nixosModules.default
   ];
 
