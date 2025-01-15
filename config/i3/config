@@ -94,6 +94,7 @@ bindsym Ctrl+Print exec bash ~/.upload.sh
 
 # Autostart applications and display settings
 exec_always --no-startup-id xrandr --output DP-0 --pos 0x0 --rotate right
+exec_always --no-startup-id xrandr --output Virtual-1 --pos 0x0 --mode 1920x1080 
 exec_always --no-startup-id xrandr --output HDMI-0 --pos 900x0 --primary
 exec_always --no-startup-id nitrogen --restore  # Restore wallpaper with Nitrogen
 exec_always --no-startup-id bash /etc/nixos/config/polybar/launch.sh  # Launch Polybar

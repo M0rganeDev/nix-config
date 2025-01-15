@@ -9,6 +9,8 @@
 
 		clear
 
+		fish_add_path -g ~/.local/bin
+		
 		function nixcfg
 			cd /etc/nixos
 			vi
