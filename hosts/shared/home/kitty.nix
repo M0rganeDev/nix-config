@@ -16,7 +16,7 @@ in
       window_padding_width = 0;
       background_opacity = "0.95";
       background_blur = 1;
-	  font = "OpenDyslexic Nerd Font";
+	  font = "DepartureMono Nerd Font";
     };
   };
 }

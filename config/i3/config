@@ -8,13 +8,14 @@ focus_on_window_activation smart
 mouse_warping output
 workspace_layout default
 workspace_auto_back_and_forth no
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background       #F8F8F2
+client.focused          #FF0000 #834589 #FFFFFF #F4F4F4   #834589
+client.focused_inactive #FFFFFF #404547 #FFFFFF #484E50   #834589
+client.unfocused        #FFFFFF #222222 #FFFFFF #292D2E   #834589
+client.urgent           #FFFFFF #900000 #FFFFFF #900000   #834589
+client.placeholder      #FFFFFF #0C0C0C #FFFFFF #000000   #834589
+
+client.background       #DE7DFF
 
 bindsym Mod4+C kill
 bindsym Mod4+Down focus down
@@ -54,7 +55,7 @@ bindsym XF86AudioLowerVolume exec amixer set Master 4%-
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioRaiseVolume exec amixer set Master 4%+
 
-font pango:DejaVu Sans Mono 0
+font pango:OpenDyslexic Nerd Font 9
 for_window [class=".*"] title_format "" 
 
 mode "resize" {

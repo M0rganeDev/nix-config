@@ -164,6 +164,7 @@
     hackgen-nf-font
     plemoljp-nf
     nerd-fonts.open-dyslexic
+	nerd-fonts.departure-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
