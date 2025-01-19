@@ -72,6 +72,15 @@
   programs.zsh.enable = true;
   programs.fish.enable = true;
 
+  services.xserver.displayManager.sessionCommands = ''
+    ${pkgs.xorg.xmodmap}/bin/xmodmap ${pkgs.writeText "xkb-layout" ''
+      keycode 104 = Return
+      keycode 108 = Mode_switch
+      keysym e = e E EuroSign
+      keysym c = c C cent
+    ''}
+  '';
+
   # https://nixos.wiki/wiki/Fish#Setting_fish_as_your_shell
   programs.bash = {
     interactiveShellInit = ''
