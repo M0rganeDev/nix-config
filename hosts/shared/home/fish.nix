@@ -10,7 +10,8 @@
 		clear
 
 		fish_add_path -g ~/.local/bin
-		
+		export JDTLS_JVM_ARGS="-javaagent:$HOME/lombok.jar"
+
 		function nixcfg
 			cd /etc/nixos
 			vi
